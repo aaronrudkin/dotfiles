@@ -1,0 +1,11 @@
+#!/bin/bash
+FILE="$1"
+
+[ $# -eq 0 ] && exit 1
+
+if [ ! -e "$FILE" ] || [ -w "$FILE" ]; then
+  nano $FILE
+else
+  echo "Need to sudo for write permissions."
+  sudo nano $FILE
+fi
