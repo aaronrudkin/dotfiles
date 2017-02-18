@@ -1,3 +1,4 @@
+setopt prompt_subst
 export PATH=~/bin:$PATH
 alias nano='writecheck' # Check if we have permission before using nano and sudo if not
 alias ls='ls -G' # LS with colors
@@ -44,8 +45,22 @@ function _server_name()
   fi
 }
 
-PROMPT="%n@$(_server_color)%m%{$reset_color%}:%~$(_server_name)$ "
+function _git_repo()
+{
+  git_branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+  if [[ $git_branch != "" ]]; then
+    git_repo=`git config --get remote.origin.url | cut -d':' -f2 |  cut -d'.' -f1`
+    git_dirty=`git status --porcelain 2>/dev/null | wc -l | tr -d '[:space:]'`
+    if [[ $git_dirty > 0 ]]; then
+      echo "%B(UNCOMMITTED)%b $git_branch on $git_repo"
+    else
+      echo "$git_branch on $git_repo"
+    fi
+  fi
+}
 
+PROMPT="%n@$(_server_color)%m%{$reset_color%}:%~$(_server_name)$ "
+RPROMPT='$(_git_repo)'
 . ~/z.sh # z jumper
 
 echo ""
