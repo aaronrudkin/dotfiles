@@ -1,6 +1,7 @@
 #!/bin/bash
 
 current_date=`date +'%Y%m%d'`
+
 cp ~/.nanorc ~/.dotfiles/
 cp ~/.zshrc ~/.dotfiles/
 cp ~/.hushlogin ~/.dotfiles/

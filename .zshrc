@@ -44,7 +44,7 @@ function _server_name()
   fi
 }
 
-PROMPT="%n@$(_server_color)%m%{$reset_color%}:%~$(_server_name) "
+PROMPT="%n@$(_server_color)%m%{$reset_color%}:%~$(_server_name)$ "
 
 . ~/z.sh # z jumper
 

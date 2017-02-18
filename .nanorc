@@ -2,3 +2,13 @@ set multibuffer
 set mouse
 set nowrap
 set const
+include ~/.nano/syntax/html.nanorc
+include ~/.nano/syntax/css.nanorc
+include ~/.nano/syntax/python.nanorc
+include ~/.nano/syntax/sql.nanorc
+include ~/.nano/syntax/shell.nanorc
+include ~/.nano/syntax/yaml.nanorc
+include ~/.nano/syntax/xml.nanorc
+include ~/.nano/syntax/json.nanorc
+include ~/.nano/syntax/javascript.nanorc
+
