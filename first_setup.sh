@@ -1,7 +1,7 @@
 if [[ `uname` == 'Darwin' ]]; then
   echo "Installing Brew"
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  brew install ffmpeg gifsicle git python wget zsh
+  brew install ffmpeg gifsicle git python wget zsh cloc optipng htop mediainfo ncdu jpegoptim pastebinit
 elif [[ `uname` == 'Linux' && `cat /proc/version` =~ .*Ubuntu.* ]]; then
   sudo apt-get update && apt-get upgrade
   sudo apt-get -y install zsh make python python-pip git unzip zip git-lfs spell xclip ncdu htop silversearcher-ag mediainfo imagemagick members pastebinit optipng jpegoptim cloc
