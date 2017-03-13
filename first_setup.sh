@@ -1,6 +1,8 @@
 if [[ `uname` == 'Darwin' ]]; then
   echo "Installing Brew"
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  brew update
+  brew upgrade
   brew install ffmpeg gifsicle git python wget zsh cloc optipng htop mediainfo ncdu jpegoptim pastebinit gpg micro
   brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json quicklook-csv qlimagesize webpquicklook
   brew cask install google-chrome flux 1password spectacle vlc rstudio dockutil
