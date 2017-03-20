@@ -21,13 +21,15 @@ chsh -s $(which zsh)
 
 echo "Generate SSH key and start an agent"
 cd ~/
-ssh-keygen -t rsa -b 4096 -C "junk_signups@rudkin.ca"
-ssh-add ~/.ssh/id_rsa
-sudo service ssh-agent start
+if [ ! -f ~/.ssh/id_rsa ]; then
+  ssh-keygen -t rsa -b 4096 -C "junk_signups@rudkin.ca"
+  ssh-add ~/.ssh/id_rsa
+  sudo service ssh-agent start
+fi
 
 echo "Setup python"
 pip install -U pip
-pip install cheat docopt Pygments six virtualenv virtualenvwrapper
+pip install docopt Pygments six virtualenv virtualenvwrapper
 export WORKON_HOME=~/Envs
 source /usr/local/bin/virtualenvwrapper.sh
 
@@ -44,7 +46,9 @@ rm -rf nanorc
 
 echo "ZSH Completions"
 git clone git://github.com/zsh-users/zsh-completions.git ~/.zsh/zsh-completions
+mkdir ~/.zsh
 mkdir ~/.zsh/completions_used
+cd ~/.zsh/completions_used
 ln -s ~/.zsh/zsh-completions/src/_ag _ag
 ln -s ~/.zsh/zsh-completions/src/_fab _fab
 ln -s ~/.zsh/zsh-completions/src/_gas _gas
@@ -66,6 +70,6 @@ echo "ZSH Autosuggestions"
 git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 
 echo "Clone the whole dotfiles repo"
-git clone git@github.com:aaronrudkin/dotfiles.git
-cd dotfiles
+git clone git@github.com:aaronrudkin/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
 ./install.sh
