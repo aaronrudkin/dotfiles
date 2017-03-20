@@ -1,15 +1,12 @@
 #!/bin/bash
-cd ~/
 
-# nano rc
-git clone https://github.com/nanorc/nanorc.git
-cd nanorc
-make install
-cd ..
-rm -rf nanorc
+ln -sF ~/.dotfiles/.zshrc ~/.zshrc
+ln -sF ~/.dotfiles/.hushlogin ~/.hushlogin
+ln -sF ~/.dotfiles/.nanorc ~/.nanorc
 
-# z.sh
-wget https://raw.githubusercontent.com/rupa/z/master/z.sh -O ~/z.sh
-
-# Copy over files
-cp .* ~/
+cd ~/.dotfiles
+./decrypt.sh
+ln -sF ~/.dotfiles/config ~/.ssh/config
+ln -sF ~/.dotfiles/.gitconfig ~/.gitconfig
+mkdir ~/bin
+ln -sF ~/.dotfiles/writecheck ~/bin/writecheck

@@ -69,4 +69,3 @@ echo "Clone the whole dotfiles repo"
 git clone git@github.com:aaronrudkin/dotfiles.git
 cd dotfiles
 ./install.sh
-
