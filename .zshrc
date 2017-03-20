@@ -1,7 +1,9 @@
 setopt prompt_subst
 export PATH=~/bin:$PATH
+fpath=(~/.zsh/completions_used $fpath)
 alias nano='writecheck' # Check if we have permission before using nano and sudo if not
 alias ls='ls -G' # LS with colors
+alias l='ls -G'
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" # iterm2 integration
 
 # VV
@@ -13,7 +15,7 @@ alias static='cd /var/www/voteview/static'
 alias scripts='cd /usr/scripts'
 alias photos='cd /usr/scripts/voteview_metadata/updateDB/getPhoto/'
 
-# MB
+# MB, local
 alias school='cd ~/Dropbox/school/UCLA\ PhD/'
 alias code='cd ~/Dropbox/code/'
 alias ks='cd ~/Dropbox/code/ks\ tracker/'
@@ -33,7 +35,7 @@ function _server_color()
   elif [[ $internal_hostname == "leela" ]]; then
     echo "%{$fg[green]%}"
   else
-    echo "%{$fg[yellow]%}QQQ"
+    echo "%{$fg[yellow]%}"
   fi
 }
 
@@ -63,5 +65,7 @@ PROMPT="%n@$(_server_color)%m%{$reset_color%}:%~$(_server_name)$ "
 RPROMPT='$(_git_repo)'
 . ~/z.sh # z jumper
 
-echo ""
+autoload -U compinit; compinit
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+echo ""
