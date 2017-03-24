@@ -1,17 +1,5 @@
 if [[ `uname` == 'Darwin' ]]; then
-  echo "Installing Brew"
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  brew update
-  brew upgrade
-  echo "Installing brew commands"
-  brew install ffmpeg gifsicle git git-lfs python wget zsh cloc optipng htop mediainfo pngcheck john 
-  brew install ncdu jpegoptim pastebinit gpg micro zsh-completions the_silver_searcher
-  brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json quicklook-csv qlimagesize webpquicklook
-  brew cask install google-chrome flux 1password spectacle vlc rstudio dockutil
-
-  # Fixing some of the quick-look stuff
-  sudo chown -R aaronrudkin ~/Library/QuickLook/qlImageSize.qlgenerator
-  sudo chmod 0755 ~/Library/QuickLook/qlImageSize.qlgenerator
+  ./brew_setup.sh
 
   # Sound effects for trash
   sudo mv "/System/Library/Components/CoreAudio.component/Contents/SharedSupport/SystemSounds/dock/drag to trash.aif" "/System/Library/Components/CoreAudio.component/Contents/SharedSupport/SystemSounds/dock/drag to trash.aif.bak"
@@ -19,6 +7,7 @@ if [[ `uname` == 'Darwin' ]]; then
   sudo mv "/System/Library/Components/CoreAudio.component/Contents/SharedSupport/SystemSounds/finder/empty trash.aif" "/System/Library/Components/CoreAudio.component/Contents/SharedSupport/SystemSounds/finder/empty trash.aif.bak"
   sudo cp "empty trash.aif" "/System/Library/Components/CoreAudio.component/Contents/SharedSupport/SystemSounds/finder/empty trash.aif"
 
+  # System defaults
   ./set_defaults.sh
 
 elif [[ `uname` == 'Linux' && `cat /proc/version` =~ .*Ubuntu.* ]]; then
