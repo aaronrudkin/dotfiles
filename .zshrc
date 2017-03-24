@@ -61,7 +61,7 @@ function _git_repo()
   fi
 }
 
-PROMPT="%n@$(_server_color)%m%{$reset_color%}:%~$(_server_name)$ "
+PROMPT="%n@$(_server_color)%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$(_server_name)$ "
 RPROMPT='$(_git_repo)'
 . ~/z.sh # z jumper
 
