@@ -10,9 +10,7 @@ if [[ `uname` == 'Darwin' ]]; then
   ./defaults_setup.sh
 
 elif [[ `uname` == 'Linux' && `cat /proc/version` =~ .*Ubuntu.* ]]; then
-  echo "Apt setup"
-  sudo apt-get update && apt-get upgrade
-  sudo apt-get -y install zsh make python python-pip git unzip zip git-lfs spell xclip ncdu htop silversearcher-ag mediainfo imagemagick members pastebinit optipng jpegoptim cloc
+  ./apt_setup.sh
 fi
 
 echo "Setup python"

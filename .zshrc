@@ -2,8 +2,9 @@ setopt prompt_subst
 export PATH=~/bin:$PATH
 fpath=(~/.zsh/completions_used $fpath)
 alias nano='writecheck' # Check if we have permission before using nano and sudo if not
-alias ls='ls -G' # LS with colors
-alias l='ls -G'
+alias ls='ls -alG' # LS with colors
+alias l='ls -alG'
+alias clearcache="cd ~/Library/Application\ Support/Google/Chrome/Default/Local\ Storage/; ls -1 | grep -E -v '(neogaf|steam|google|netflix|github|reddit|slack)' | xargs rm -f"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" # iterm2 integration
 
 # VV

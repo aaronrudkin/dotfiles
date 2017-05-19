@@ -56,6 +56,9 @@
   echo "Show file extensions"
   defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
+  echo "No more .DS_Store"
+  defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+
   echo "Show library folder"
   chflags nohidden ~/Library
 
