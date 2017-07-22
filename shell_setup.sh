@@ -46,11 +46,13 @@ echo "ZSH Autosuggestions"
 git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 
 # Setup symlinks
+echo "Symlinking dotfiles"
 ln -sF ~/.dotfiles/.zshrc ~/.zshrc
 ln -sF ~/.dotfiles/.hushlogin ~/.hushlogin
 ln -sF ~/.dotfiles/.nanorc ~/.nanorc
 
 # Decrypt encrypted stuff
+echo "Decrypt encrypted data."
 cd ~/.dotfiles
 ./decrypt.sh
 
@@ -59,5 +61,7 @@ ln -sF ~/.dotfiles/config ~/.ssh/config
 ln -sF ~/.dotfiles/.gitconfig ~/.gitconfig
 
 # Deploy the bin file.
+echo "Set up bin dir."
 mkdir ~/bin
 ln -sF ~/.dotfiles/writecheck ~/bin/writecheck
+curl https://raw.githubusercontent.com/imwally/battstat/master/battstat -o "../bin/battstat"
