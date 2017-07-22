@@ -9,9 +9,11 @@
   brew install ffmpeg gifsicle git git-lfs python wget zsh cloc optipng htop mediainfo pngcheck john tree tmux
   brew install ncdu jpegoptim pastebinit gpg micro zsh-completions the_silver_searcher dockutil youtube-dl
   brew install imagemagick jq
+
   brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json quicklook-csv qlimagesize webpquicklook mactex texshop
   brew cask install google-chrome 1password rstudio dropbox
   brew cask install grandperspective the-unarchiver skype vlc spectacle
+  brew cask install vanilla
 
   # Fixing some of the quick-look stuff
   sudo chown -R aaronrudkin ~/Library/QuickLook/qlImageSize.qlgenerator
