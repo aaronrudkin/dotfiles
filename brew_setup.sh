@@ -8,7 +8,7 @@
   brew install coreutils moreutils findutils
   brew install ffmpeg gifsicle git git-lfs python wget zsh cloc optipng htop mediainfo pngcheck john tree tmux
   brew install ncdu jpegoptim pastebinit gpg micro zsh-completions the_silver_searcher dockutil youtube-dl
-  brew install imagemagick jq
+  brew install imagemagick jq mas
 
   brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json quicklook-csv qlimagesize webpquicklook mactex texshop
   brew cask install google-chrome 1password rstudio dropbox
