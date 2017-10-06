@@ -1,2 +1,4 @@
 .gitconfig
 config
+id_rsa.pub
+id_rsa
