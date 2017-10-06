@@ -68,3 +68,9 @@
   defaults write com.apple.dock tilesize -int 16
   killall Dock
   killall Finder
+
+  echo "Battstat"
+  mkdir ~/bin/
+  cd ~/bin
+  curl -O https://raw.githubusercontent.com/imwally/battstat/master/battstat
+  chmod u+x battstat
