@@ -1,6 +1,8 @@
   echo "Installing Brew"
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  # Casks of interest
   brew tap caskroom/cask
+  brew tap buo/homebrew-cask-upgrade
   brew update
   brew upgrade
 
