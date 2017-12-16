@@ -16,6 +16,7 @@
   brew cask install google-chrome 1password rstudio dropbox
   brew cask install grandperspective the-unarchiver skype vlc spectacle
   brew cask install vanilla
+  brew cask install pdftotext
 
   # Fixing some of the quick-look stuff
   sudo chown -R aaronrudkin ~/Library/QuickLook/qlImageSize.qlgenerator
